@@ -1,0 +1,128 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API - Salão Badá",
+      "version": "1.0.0",
+      "description": "API para agendamentos, serviços e profissionais do Salão Badá."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000",
+        "description": "Servidor local"
+      }
+    ],
+    "paths": {
+      "/servicos": {
+        "get": {
+          "summary": "Lista todos os serviços",
+          "responses": {
+            "200": {
+              "description": "Lista de serviços",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "$ref": "#/components/schemas/Servico" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/profissionais": {
+        "get": {
+          "summary": "Lista todos os profissionais",
+          "responses": {
+            "200": {
+              "description": "Lista de profissionais",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "$ref": "#/components/schemas/Profissional" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/agendamentos": {
+        "get": {
+          "summary": "Lista todos os agendamentos",
+          "responses": {
+            "200": {
+              "description": "Lista de agendamentos",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "$ref": "#/components/schemas/Agendamento" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Cria um novo agendamento",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Agendamento" }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Agendamento criado com sucesso",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "mensagem": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Servico": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer", "example": 1 },
+            "nome": { "type": "string", "example": "Corte de cabelo" },
+            "preco": { "type": "number", "example": 50 }
+          }
+        },
+        "Profissional": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer", "example": 1 },
+            "nome": { "type": "string", "example": "Ana" },
+            "especializacao": { "type": "string", "example": "Cabelereira" }
+          }
+        },
+        "Agendamento": {
+          "type": "object",
+          "properties": {
+            "nome": { "type": "string", "example": "Maria" },
+            "email": { "type": "string", "example": "maria@email.com" },
+            "servico": { "type": "string", "example": "Coloração" },
+            "dataHora": { "type": "string", "format": "date-time", "example": "2025-06-20T14:00:00" }
+          }
+        }
+      }
+    }
+  }
+  
