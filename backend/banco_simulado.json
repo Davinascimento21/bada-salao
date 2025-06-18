@@ -1,0 +1,12 @@
+{
+  "usuarios": [],
+  "servicos": [
+    {"id": 1, "nome": "Corte de cabelo", "preco": 50},
+    {"id": 2, "nome": "Coloração", "preco": 120}
+  ],
+  "profissionais": [
+    {"id": 1, "nome": "Ana", "especializacao": "Cabelereira"},
+    {"id": 2, "nome": "João", "especializacao": "Colorista"}
+  ],
+  "agendamentos": []
+}

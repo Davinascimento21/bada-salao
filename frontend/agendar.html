@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendar Serviço</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Agendar Serviço</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="agendar.html">Agendar</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Preencha os dados para agendar</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required><br><br>
+      <input type="email" placeholder="Seu e-mail" required><br><br>
+      <select>
+        <option>Escolha o serviço</option>
+        <option>Corte de cabelo</option>
+        <option>Coloração</option>
+      </select><br><br>
+      <input type="datetime-local" required><br><br>
+      <button type="submit">Agendar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Salão Badá</p>
+  </footer>
+  <script src="js/agendamento.js"></script>
+</body>
+</html>
